@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple ToDo App</title>
+    <style>
+      /* Some basic styles for demonstration */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      form {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ToDo</th>
+          <th>Sub-tasks</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="todoList">
+        <!-- Existing todos will be populated here -->
+      </tbody>
+    </table>
+
+    <form id="addTodoForm">
+      <input
+        id="taskInput"
+        name="taskInput"
+        type="text"
+        placeholder="Task"
+        required
+      />
+      <input
+        id="subTaskInput"
+        name="subTaskInput"
+        type="text"
+        placeholder="Sub-task"
+        required
+      />
+      <input
+        id="notesInput"
+        name="notesInput"
+        type="text"
+        placeholder="Notes"
+        required
+      />
+      <input type="submit" value="Add Todo" />
+    </form>
+
+    <!-- Template for ToDo -->
+    <template id="todo">
+      <tr>
+        <td id="num"></td>
+        <td id="task"></td>
+        <td id="sub-task"></td>
+        <td id="notes"></td>
+      </tr>
+    </template>
+
+    <script src="app.js"></script>
+    <!-- JavaScript code -->
+  </body>
+</html>
