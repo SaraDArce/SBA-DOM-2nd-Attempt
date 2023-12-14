@@ -27,3 +27,24 @@ document
     createTodo(); // Call createTodo function to add new ToDo
     this.reset(); // Reset the form after adding ToDo
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const todoTemplate = document.getElementById("todo");
+  const newTodo = todoTemplate.content.cloneNode(true);
+
+  // Cache elements using selectElementById and querySelector
+  const numElement = newTodo.querySelector("#num");
+  const taskElement = newTodo.querySelector("#task");
+  const subTaskElement = newTodo.querySelector("#sub-task");
+  const notesElement = newTodo.querySelector("#notes");
+
+  // Modify cached elements with initial data
+  numElement.textContent = "1";
+  taskElement.textContent = "Walk the dog";
+  subTaskElement.textContent = "Pick up poop";
+  notesElement.textContent = "He is a leash puller";
+
+  // Append the initial ToDo to the ToDo list
+  const todoList = document.getElementById("todoList");
+  todoList.appendChild(newTodo);
+});
