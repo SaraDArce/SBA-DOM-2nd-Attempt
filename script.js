@@ -18,3 +18,12 @@ newTodo.querySelector("#notes").textContent = userInput.notes;
 // Append the new ToDo to the ToDo list
 const todoList = document.getElementById("todoList");
 todoList.appendChild(newTodo);
+
+// Event listener for form submission
+document
+  .getElementById("addTodoForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    createTodo(); // Call createTodo function to add new ToDo
+    this.reset(); // Reset the form after adding ToDo
+  });
